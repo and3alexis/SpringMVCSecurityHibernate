@@ -1,0 +1,133 @@
+/* Application css */
+
+body{
+	margin-left:50px !important;
+	margin-right:50px !important;
+}
+
+h2{
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+}
+
+.button-purple {
+	background: #7B1FA2;
+	color: white;
+}
+
+.button-blue {
+	background: #2196F3;
+	color: white;
+}
+
+.button-orange {
+	background: #EF6C00;
+	color: white;
+}
+
+.button-red {
+	background: #F44336;
+	color: white;
+}
+
+.button-green {
+	background: rgb(28, 184, 65);;
+	color: white;
+}
+
+.button-xlarge {
+     font-size: 125%;
+ }
+ 
+.error {
+	color: #ff0000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#note {
+    position: absolute;
+    z-index: 6001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+
+#info {
+    position: absolute;
+    z-index: 6001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2196F3;
+    color: white;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+.cssanimations.csstransforms #info {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+#error {
+    position: absolute;
+    z-index: 6001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #F44336;
+    color: white;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+.cssanimations.csstransforms #error {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+#close {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  text-indent: -9999px;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.cssanimations.csstransforms #close {
+  display: none;
+}
+    
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-50px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+
+@-moz-keyframes slideDown {
+    0%, 100% { -moz-transform: translateY(-50px); }
+    10%, 90% { -moz-transform: translateY(0px); }
+}
