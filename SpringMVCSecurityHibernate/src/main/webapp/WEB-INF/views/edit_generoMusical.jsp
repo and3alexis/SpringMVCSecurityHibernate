@@ -22,13 +22,6 @@
 				</h2>
 			</legend>
 			
-			<form:label path="id">
-				<spring:message code="message.generomusical.edit.form.id" text="default text" />:
-			</form:label>
-			
-			<form:input path="id" readonly="true" size="8"  disabled="true" />
-			<form:hidden path="id" />
-			
 			<form:label path="nombre">
 				<spring:message code="message.generomusical.edit.form.name" text="default text" />(*):
 			</form:label>
@@ -41,12 +34,13 @@
 			
 			<form:textarea cssClass="pure-input-1-4" path="historia"  rows="10"/>
 			
-			<button type="submit" class="pure-button pure-button-primary"><spring:message code="message.generomusical.edit.form.button.create" text="default text" /></button>
+			<button type="submit" class="pure-button button-blue button-xlarge"><spring:message code="message.generomusical.edit.form.button.create" text="default text" /></button>
+			<a class="pure-button button-red button-xlarge" href="${cancelAction}" ><spring:message code="message.generomusical.edit.button.cancelar" text="default text" /></a>
 		</fieldset>
 		
 	</form:form>
 	
-	<a class="pure-button button-green button-xlarge" href="${cancelAction}" ><spring:message code="message.generomusical.edit.button.cancelar" text="default text" /></a>
+	
 
 </body>
 </html>

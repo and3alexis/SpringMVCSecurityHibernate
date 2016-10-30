@@ -14,9 +14,31 @@ h2{
 	font-family: 'Orienta', sans-serif;
 }
 
-.button-green {
-	background: rgb(28, 184, 65); /* this is a green */
+.button-purple {
+	background: #7B1FA2;
+	color: white;
 }
+
+.button-blue {
+	background: #2196F3;
+	color: white;
+}
+
+.button-orange {
+	background: #EF6C00;
+	color: white;
+}
+
+.button-red {
+	background: #F44336;
+	color: white;
+}
+
+.button-green {
+	background: rgb(28, 184, 65);;
+	color: white;
+}
+
 .button-xlarge {
      font-size: 125%;
  }

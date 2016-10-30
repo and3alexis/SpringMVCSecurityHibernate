@@ -30,11 +30,14 @@
 				
 				<form:textarea cssClass="pure-input-1-4" path="historia" rows="10"/>
 				
-				<button type="submit" class="pure-button pure-button-primary"><spring:message code="message.generomusical.create.form.button.create" text="default text" /></button>
+				<button type="submit" class="pure-button button-blue button-xlarge"><spring:message code="message.generomusical.create.form.button.create" text="default text" /></button>
+				<a class="pure-button button-red button-xlarge" href="${cancelAction}" ><spring:message code="message.generomusical.create.button.cancelar" text="default text" /></a>
 			</fieldset>
 			
 		</form:form>
-	<a class="pure-button button-green button-xlarge" href="${cancelAction}" ><spring:message code="message.generomusical.create.button.cancelar" text="default text" /></a>
+	
+	
 	<br>
+
 </body>
 </html>

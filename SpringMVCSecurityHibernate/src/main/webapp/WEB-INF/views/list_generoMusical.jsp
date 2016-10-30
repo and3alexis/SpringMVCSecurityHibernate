@@ -24,7 +24,7 @@
 		
 	</form:form>
 	
-	<a class="pure-button button-green button-xlarge" href="<c:url value='/generoMusical/create' />" >
+	<a class="pure-button button-purple button-xlarge" href="<c:url value='/generoMusical/create' />" >
 		<spring:message code="message.generomusical.list.button.create" text="default text" />
 	</a>
 	<br/>
@@ -35,7 +35,6 @@
 		<table class="pure-table pure-table-striped">
 		<thead>
 			<tr>
-				<th><spring:message code="message.generomusical.list.table.column.id" text="default text" /></th>
 				<th><spring:message code="message.generomusical.list.table.column.nombre" text="default text" /></th>
 				<th><spring:message code="message.generomusical.list.table.column.historia" text="default text" /></th>
 				<th><spring:message code="message.generomusical.list.button.edit" text="default text" /></th>
@@ -44,11 +43,10 @@
 		</thead>
 		<c:forEach items="${listGenerosMusicales}" var="generoMusical">
 			<tr>
-				<td>${generoMusical.id}</td>
 				<td>${generoMusical.nombre}</td>
 				<td>${generoMusical.historia}</td>
-				<td><a href="<c:url value='/generoMusical/edit/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.edit" text="default text" /></a></td>
-				<td><a class="confirmLink" href="<c:url value='/generoMusical/remove/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.delete" text="default text" /></a></td>
+				<td><a class="pure-button button-blue" href="<c:url value='/generoMusical/edit/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.edit" text="default text" /></a></td>
+				<td><a class="confirmLink pure-button button-orange" href="<c:url value='/generoMusical/remove/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.delete" text="default text" /></a></td>
 			</tr>
 		</c:forEach>
 		</table>
