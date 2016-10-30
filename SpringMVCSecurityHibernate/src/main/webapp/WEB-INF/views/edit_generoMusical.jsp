@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<c:url var="addAction" value="/generoMusical/add" ></c:url>
+	<c:url var="addAction" value="/generoMusical/update" ></c:url>
 	<c:url var="cancelAction" value="/generoMusical/cancel" ></c:url>
 
 	<form:form cssClass="pure-form pure-form-stacked" action="${addAction}" commandName="generoMusical">
@@ -29,6 +29,7 @@
 			</form:label>
 			
 			<form:input cssClass="pure-input-1-4" path="nombre" />
+			<form:errors path="nombre" cssClass="error" />
 			
 			<form:label path="historia">
 				<spring:message code="message.generomusical.edit.form.history" text="default text" />:

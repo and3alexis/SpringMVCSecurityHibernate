@@ -58,6 +58,7 @@
 	<context:component-scan base-package="com.prueba.mvc.generomusical.controller" />
 	<context:component-scan base-package="com.prueba.mvc.generomusical.dao" />
 	<context:component-scan base-package="com.prueba.mvc.generomusical.service" />
+	<context:component-scan base-package="com.prueba.mvc.exception" />
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	

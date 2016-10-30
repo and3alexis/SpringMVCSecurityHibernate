@@ -14,6 +14,13 @@
 </head>
 <body>
 	
+	<c:if test="${!empty messageAlert}">
+		<div id="${messageType}">
+        	<spring:message code="${messageAlert}" text="default text" />. <a id="close">[close]</a>
+    	</div>
+	</c:if>
+	
+	
 	<form:form cssClass="pure-form pure-form-stacked">
 		
 		<fieldset>
@@ -55,6 +62,16 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="<spring:url value='/resources/js/jquery-confirm.min.js' />"></script>
 	<script src="<spring:url value='/resources/js/core.js' />"></script>
+	<script>
+   		close = document.getElementById("close");
+   		close.addEventListener('click', function() {
+   			var myvar = "${messageType}";
+     		note = document.getElementById(myvar);
+     		note.style.display = 'none';
+   		}, false);
+  	</script>
+	<script src="<spring:url value='/resources/js/modernizr.custom.80028.js' />"></script>
+	
 
 </body>
 </html>
