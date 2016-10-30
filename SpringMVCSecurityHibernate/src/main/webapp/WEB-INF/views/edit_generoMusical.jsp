@@ -10,6 +10,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	
+	<c:if test="${!empty messageAlert}">
+		<div id="${messageType}">
+        	<spring:message code="${messageAlert}" text="default text" /> <a id="close">[close]</a>
+    	</div>
+	</c:if>
 
 	<c:url var="addAction" value="/generoMusical/update" ></c:url>
 	<c:url var="cancelAction" value="/generoMusical/cancel" ></c:url>
@@ -43,7 +49,15 @@
 		
 	</form:form>
 	
-	
+	<script>
+   		close = document.getElementById("close");
+   		close.addEventListener('click', function() {
+   			var myvar = "${messageType}";
+     		note = document.getElementById(myvar);
+     		note.style.display = 'none';
+   		}, false);
+  	</script>
+	<script src="<spring:url value='/resources/js/modernizr.custom.80028.js' />"></script>
 
 </body>
 </html>

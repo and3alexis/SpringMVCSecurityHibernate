@@ -13,7 +13,7 @@
 
 	<c:if test="${!empty messageAlert}">
 		<div id="${messageType}">
-        	<spring:message code="${messageAlert}" text="default text" />. <a id="close">[close]</a>
+        	<spring:message code="${messageAlert}" text="default text" /> <a id="close">[close]</a>
     	</div>
 	</c:if>
  
@@ -44,7 +44,6 @@
 		</form:form>
 	
 	
-	<br>
 	<script>
    		close = document.getElementById("close");
    		close.addEventListener('click', function() {
