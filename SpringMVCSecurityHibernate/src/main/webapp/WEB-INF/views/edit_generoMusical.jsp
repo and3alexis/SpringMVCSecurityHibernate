@@ -4,7 +4,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Generos Musicales Page</title>
+	<title><spring:message code="message.generomusical.edit.title" text="default text" /></title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="<spring:url value='/resources/css/style.css' />">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,33 +16,37 @@
 
 	<form:form cssClass="pure-form pure-form-stacked" action="${addAction}" commandName="generoMusical">
 		<fieldset>
-			<legend><h1>Editar Genero Musical</h1></legend>
+			<legend>
+				<h2>
+					<spring:message code="message.generomusical.edit.title" text="default text" />
+				</h2>
+			</legend>
 			
 			<form:label path="id">
-				<spring:message text="ID"/>
+				<spring:message code="message.generomusical.edit.form.id" text="default text" />:
 			</form:label>
 			
 			<form:input path="id" readonly="true" size="8"  disabled="true" />
 			<form:hidden path="id" />
 			
 			<form:label path="nombre">
-				<spring:message text="Name"/>
+				<spring:message code="message.generomusical.edit.form.name" text="default text" />(*):
 			</form:label>
 			
 			<form:input cssClass="pure-input-1-4" path="nombre" />
 			
 			<form:label path="historia">
-				<spring:message text="Historia"/>
+				<spring:message code="message.generomusical.edit.form.history" text="default text" />:
 			</form:label>
 			
-			<form:textarea cssClass="pure-input-1-4" path="historia" />
+			<form:textarea cssClass="pure-input-1-4" path="historia"  rows="10"/>
 			
-			<button type="submit" class="pure-button pure-button-primary">Add</button>
+			<button type="submit" class="pure-button pure-button-primary"><spring:message code="message.generomusical.edit.form.button.create" text="default text" /></button>
 		</fieldset>
 		
 	</form:form>
 	
-	<a class="pure-button button-green button-xlarge" href="${cancelAction}" >Cancel</a>
+	<a class="pure-button button-green button-xlarge" href="${cancelAction}" ><spring:message code="message.generomusical.edit.button.cancelar" text="default text" /></a>
 
 </body>
 </html>

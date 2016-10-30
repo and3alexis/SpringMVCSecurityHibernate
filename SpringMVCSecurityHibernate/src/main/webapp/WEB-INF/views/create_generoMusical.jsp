@@ -16,7 +16,7 @@
 	
 		<form:form cssClass="pure-form pure-form-stacked" action="${addAction}" commandName="generoMusical">
 			<fieldset>
-				<legend><h1><spring:message code="message.generomusical.create.title" text="default text" /></h1></legend>
+				<legend><h2><spring:message code="message.generomusical.create.title" text="default text" /></h2></legend>
 				
 				<form:label path="nombre">
 					<spring:message code="message.generomusical.create.form.name" text="default text" />(*):

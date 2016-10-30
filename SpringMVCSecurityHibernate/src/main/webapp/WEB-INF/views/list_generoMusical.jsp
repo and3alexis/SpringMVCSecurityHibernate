@@ -4,8 +4,11 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title><spring:message code="message.generomusical.list.title" text="default text" /></title>
+	<title>
+		<spring:message code="message.generomusical.list.title" text="default text" />
+	</title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="<spring:url value='/resources/css/jquery-confirm.min.css' />">
 	<link rel="stylesheet" href="<spring:url value='/resources/css/style.css' />">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -15,13 +18,15 @@
 		
 		<fieldset>
 			<legend>
-					<spring:message code="message.generomusical.list.title" text="default text" />
+					<h2><spring:message code="message.generomusical.list.title" text="default text" /></h2>
 			</legend>
 		</fieldset>
 		
 	</form:form>
 	
-	<a class="pure-button button-green button-xlarge" href="<c:url value='/generoMusical/create' />" ><spring:message code="message.generomusical.list.button.create" text="default text" /></a>
+	<a class="pure-button button-green button-xlarge" href="<c:url value='/generoMusical/create' />" >
+		<spring:message code="message.generomusical.list.button.create" text="default text" />
+	</a>
 	<br/>
 	<br/>
 	
@@ -43,11 +48,15 @@
 				<td>${generoMusical.nombre}</td>
 				<td>${generoMusical.historia}</td>
 				<td><a href="<c:url value='/generoMusical/edit/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.edit" text="default text" /></a></td>
-				<td><a href="<c:url value='/generoMusical/remove/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.delete" text="default text" /></a></td>
+				<td><a class="confirmLink" href="<c:url value='/generoMusical/remove/${generoMusical.id}' />" ><spring:message code="message.generomusical.list.button.delete" text="default text" /></a></td>
 			</tr>
 		</c:forEach>
 		</table>
 	</c:if>
+	
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="<spring:url value='/resources/js/jquery-confirm.min.js' />"></script>
+	<script src="<spring:url value='/resources/js/core.js' />"></script>
 
 </body>
 </html>
