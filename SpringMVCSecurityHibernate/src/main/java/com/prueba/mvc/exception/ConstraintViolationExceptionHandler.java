@@ -12,8 +12,7 @@ public class ConstraintViolationExceptionHandler implements ExceptionHandler{
 	public String proccess(Object object) {
 		if(object instanceof ConstraintViolationException){
 			ConstraintViolationException violationException = (ConstraintViolationException) object;
-			Throwable throwable = violationException.getCause();
-			if(throwable instanceof MySQLIntegrityConstraintViolationException){
+			if(violationException.getCause() instanceof MySQLIntegrityConstraintViolationException){
 				return "message.generomusical.messageAlert.duplicado";
 			}
 		}
