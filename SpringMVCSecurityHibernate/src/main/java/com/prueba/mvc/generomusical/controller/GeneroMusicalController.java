@@ -58,7 +58,7 @@ public class GeneroMusicalController {
 				return "create_generoMusical";
 			}
 			this.generoMusicalService.createGeneroMusical(generoMusical);
-			success(model);
+			success(model, "message.generomusical.messageAlert.success");
 		} catch (Exception e) {
 			return findCorrectException(e, model, "create_generoMusical");
 		}
@@ -73,7 +73,7 @@ public class GeneroMusicalController {
 				return "edit_generoMusical";
 			}
 			this.generoMusicalService.updateGeneroMusical(generoMusical);
-			success(model);
+			success(model, "message.generomusical.messageAlert.success");
 		} catch (Exception e) {
 			return findCorrectException(e, model, "edit_generoMusical");
 		}
@@ -82,7 +82,7 @@ public class GeneroMusicalController {
 	}
 	
 	private boolean validateGeneroMusicalForm(GeneroMusical generoMusical, BindingResult bindingResult){
-		generoMusicalValidator.validate(generoMusical, bindingResult);
+		this.generoMusicalValidator.validate(generoMusical, bindingResult);
 		if (bindingResult.hasErrors()) {
 			return true;
 		}
@@ -93,21 +93,21 @@ public class GeneroMusicalController {
     public String removeGeneroMusical(@PathVariable("id") int id, Model model){
 		try {
 			this.generoMusicalService.removeGeneroMusical(id);
-	        success(model);
+	        success(model, "message.generomusical.messageAlert.delete.success");
 		} catch (Exception e) {
 			return findCorrectException(e, model, "list_generoMusical");
 		}
         return "list_generoMusical";
     }
 	
-	private void success(Model model){
+	private void success(Model model, String msg){
 		model.addAttribute("listGenerosMusicales", this.generoMusicalService.listGenerosMusicales());
-		model.addAttribute("messageAlert", "message.generomusical.messageAlert.seccess");
+		model.addAttribute("messageAlert", msg);
 		model.addAttribute("messageType", "info");
 	}
 	
 	private String findCorrectException(Exception e, Model model, String url){
-		ExceptionHandler exHandler = handler.getExceptionChain();
+		ExceptionHandler exHandler = this.handler.getExceptionChain();
 		model.addAttribute("messageAlert", exHandler.proccess(e));
 		model.addAttribute("messageType", "error");
 		return url;

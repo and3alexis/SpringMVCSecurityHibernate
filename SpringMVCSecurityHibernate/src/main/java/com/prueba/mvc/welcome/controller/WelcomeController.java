@@ -13,9 +13,4 @@ public class WelcomeController {
 		return "redirect:/generosMusicales";
 	}
 	
-	@RequestMapping(value = "/SpringMVCHibernate", method = RequestMethod.GET)
-	public String welcomePage(Model model) {
-		return "redirect:/generosMusicales";
-	}
-
 }

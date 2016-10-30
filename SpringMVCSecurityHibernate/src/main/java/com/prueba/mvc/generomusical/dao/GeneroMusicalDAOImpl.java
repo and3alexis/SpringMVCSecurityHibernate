@@ -8,8 +8,6 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,8 +16,6 @@ import com.prueba.mvc.generomusical.domain.GeneroMusical;
 @Repository
 public class GeneroMusicalDAOImpl implements GeneroMusicalDAO{
 	
-	private static final Logger logger = LoggerFactory.getLogger(GeneroMusicalDAOImpl.class);
-	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -27,14 +23,12 @@ public class GeneroMusicalDAOImpl implements GeneroMusicalDAO{
 	public void createGeneroMusical(GeneroMusical generoMusical) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.persist(generoMusical);
-		logger.info("Genero Musical saved successfuly, Genero Musical Details = " + generoMusical);
 	}
 	
 	@Override
 	public void updateGeneroMusical(GeneroMusical generoMusical) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.update(generoMusical);
-		logger.info("Genero Musical updated successfully, Genero Musical Details = " + generoMusical);
 	}
 	
 	@Override
@@ -51,7 +45,6 @@ public class GeneroMusicalDAOImpl implements GeneroMusicalDAO{
 			Session session = this.sessionFactory.getCurrentSession();
 			session.delete(generoMusical);
 		}
-		logger.info("Person deleted successfully, person details = " + generoMusical);
 	}
 	
 	@SuppressWarnings("unchecked")

@@ -18,19 +18,19 @@ public class GeneroMusicalServiceImpl implements GeneroMusicalService{
 	@Override
 	@Transactional
 	public GeneroMusical createGeneroMusical(GeneroMusical generoMusical) {
-		generoMusicalDAO.createGeneroMusical(generoMusical);
+		this.generoMusicalDAO.createGeneroMusical(generoMusical);
 		return generoMusical;
 	}
 
 	@Override
 	@Transactional
 	public GeneroMusical updateGeneroMusical(GeneroMusical generoMusical) {
-		GeneroMusical current_generoMusical = generoMusicalDAO.getGeneroMusicalById(generoMusical.getId());
+		GeneroMusical current_generoMusical = this.generoMusicalDAO.getGeneroMusicalById(generoMusical.getId());
 		
 		if(current_generoMusical != null){
 			current_generoMusical.setNombre(generoMusical.getNombre());
 			current_generoMusical.setHistoria(generoMusical.getHistoria());
-			generoMusicalDAO.updateGeneroMusical(current_generoMusical);
+			this.generoMusicalDAO.updateGeneroMusical(current_generoMusical);
 		}
 		
 		return current_generoMusical;
@@ -39,25 +39,25 @@ public class GeneroMusicalServiceImpl implements GeneroMusicalService{
 	@Override
 	@Transactional
 	public List<GeneroMusical> listGenerosMusicales() {
-		return generoMusicalDAO.listGenerosMusicales();
+		return this.generoMusicalDAO.listGenerosMusicales();
 	}
 
 	@Override
 	@Transactional
 	public void removeGeneroMusical(int id) {
-		generoMusicalDAO.removeGeneroMusical(id);
+		this.generoMusicalDAO.removeGeneroMusical(id);
 	}
 
 	@Override
 	@Transactional
 	public GeneroMusical getGeneroMusicalById(int id) {
-		return generoMusicalDAO.getGeneroMusicalById(id);
+		return this.generoMusicalDAO.getGeneroMusicalById(id);
 	}
 	
 	@Override
 	@Transactional
 	public void deleteAllGenerosMusicales(){
-		generoMusicalDAO.deleteAllGenerosMusicales();
+		this.generoMusicalDAO.deleteAllGenerosMusicales();
 	}
 	
 	

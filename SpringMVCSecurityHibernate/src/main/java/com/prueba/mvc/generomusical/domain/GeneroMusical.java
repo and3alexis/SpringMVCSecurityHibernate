@@ -110,6 +110,4 @@ public class GeneroMusical implements Serializable {
 		setNombre(that.getNombre());
 	}
 	
-	
-	
 }
