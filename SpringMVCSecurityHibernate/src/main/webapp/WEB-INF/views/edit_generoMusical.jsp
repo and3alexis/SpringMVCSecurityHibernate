@@ -22,6 +22,8 @@
 				</h2>
 			</legend>
 			
+			<form:hidden path="id" />
+			
 			<form:label path="nombre">
 				<spring:message code="message.generomusical.edit.form.name" text="default text" />(*):
 			</form:label>
